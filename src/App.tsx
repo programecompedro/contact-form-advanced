@@ -1,12 +1,14 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import {
   Button,
   Box,
   Typography,
   createTheme,
   MuiThemeProvider,
+  Link,
 } from "@material-ui/core";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -31,16 +33,26 @@ const useStyles = makeStyles((theme) => ({
   },
   footerForm: {
     display: "flex",
-    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    padding: "0 1rem",
   },
   headerForm: {
     margin: "2rem 0",
     textAlign: "center",
   },
-  title: {
+  text: {
     color: "#FFC933",
     fontWeight: "normal",
     fontFamily: "roboto",
+  },
+  linkGithub: {
+    color: "#FFC933",
+    fontWeight: "normal",
+    fontFamily: "roboto",
+    display: "flex",
+    alignSelf: "center",
+    textDecoration: "none",
+    paddingRight: "1rem",
   },
 }));
 
@@ -75,7 +87,13 @@ function App() {
     },
     validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      alert(
+        `Muito bem ${values.name} o formulário foi validado com sucesso! \n Segue seus dados validados:\n
+        Email: ${values.email}\n
+        Idade: ${values.age}\n
+        Telefone: ${values.tel}\n
+        Mensagem: ${values.msg}\n`
+      );
     },
   });
   return (
@@ -87,11 +105,11 @@ function App() {
         onSubmit={formik.handleSubmit}
       >
         <Box className={classes.headerForm}>
-          <Typography className={classes.title} variant="h2" component="h1">
+          <Typography className={classes.text} variant="h2" component="h1">
             Área de contato
           </Typography>
           <Typography
-            className={classes.title}
+            className={classes.text}
             variant="subtitle1"
             component="h2"
           >
@@ -101,6 +119,7 @@ function App() {
         </Box>
         <Box>
           <TextField
+            InputLabelProps={{ style: { color: "white" } }}
             variant="outlined"
             className={classes.inputForm}
             id="name"
@@ -110,11 +129,13 @@ function App() {
             type="text"
             onChange={formik.handleChange}
             value={formik.values.name}
+            helperText={formik.touched.name && formik.errors.name}
             error={formik.touched.name && Boolean(formik.errors.name)}
           />
         </Box>
         <Box>
           <TextField
+            InputLabelProps={{ style: { color: "white" } }}
             variant="outlined"
             className={classes.inputForm}
             id="email"
@@ -129,6 +150,7 @@ function App() {
         </Box>
         <Box>
           <TextField
+            InputLabelProps={{ style: { color: "white" } }}
             variant="outlined"
             className={classes.inputForm}
             id="age"
@@ -143,6 +165,7 @@ function App() {
         </Box>
         <Box>
           <TextField
+            InputLabelProps={{ style: { color: "white" } }}
             variant="outlined"
             className={classes.inputForm}
             id="tel"
@@ -157,6 +180,7 @@ function App() {
         </Box>
         <Box>
           <TextField
+            InputLabelProps={{ style: { color: "white" } }}
             variant="outlined"
             className={classes.inputForm}
             id="msg"
@@ -173,6 +197,15 @@ function App() {
         </Box>
 
         <Box className={classes.footerForm}>
+          <Typography variant="subtitle2" component="h3">
+            <Link
+              href="http://www.github.com/programecompedro"
+              className={classes.linkGithub}
+            >
+              Código fonte no Github &nbsp;&nbsp;
+              <ExitToAppIcon />
+            </Link>
+          </Typography>
           <Button variant="contained" color="primary" type="submit">
             Enviar
           </Button>
