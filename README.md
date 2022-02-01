@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 <p align="center">
-  <img src="./media/contact form advanced.png" alt="contact form validation advanced">
+  <img src="./media/form.png" alt="contact form validation advanced">
 </p>
 ## Available Scripts
 
