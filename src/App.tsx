@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import CopyrightIcon from "@material-ui/icons/Copyright";
 import {
   Button,
   Box,
@@ -9,21 +10,18 @@ import {
   createTheme,
   MuiThemeProvider,
   Link,
+  Container,
 } from "@material-ui/core";
 import { useFormik } from "formik";
 import * as yup from "yup";
-
 const useStyles = makeStyles((theme) => ({
   primary: {
     color: "#FFFFFF",
   },
   containerForm: {
-    display: "block",
-    margin: "0 auto",
-    width: "30%",
     background: "#292929",
-    height: "calc(100vh - 7rem)",
-    padding: "5rem 5rem",
+    height: "100vh",
+    padding: "2rem 5rem",
   },
   inputForm: {
     width: "100%",
@@ -53,6 +51,11 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     textDecoration: "none",
     paddingRight: "1rem",
+  },
+  copyRight: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "5rem",
   },
 }));
 
@@ -98,119 +101,132 @@ function App() {
   });
   return (
     <MuiThemeProvider theme={theme}>
-      <form
-        className={classes.containerForm}
-        noValidate
-        autoComplete="off"
-        onSubmit={formik.handleSubmit}
-      >
-        <Box className={classes.headerForm}>
-          <Typography className={classes.text} variant="h2" component="h1">
-            Área de contato
-          </Typography>
-          <Typography
-            className={classes.text}
-            variant="subtitle1"
-            component="h2"
-          >
-            Formulário de validação utilizando React | Typescript | Yup | Formik
-            | Material UI
-          </Typography>
-        </Box>
-        <Box>
-          <TextField
-            InputLabelProps={{ style: { color: "white" } }}
-            variant="outlined"
-            className={classes.inputForm}
-            id="name"
-            name="name"
-            label="Nome Completo"
-            autoFocus
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            helperText={formik.touched.name && formik.errors.name}
-            error={formik.touched.name && Boolean(formik.errors.name)}
-          />
-        </Box>
-        <Box>
-          <TextField
-            InputLabelProps={{ style: { color: "white" } }}
-            variant="outlined"
-            className={classes.inputForm}
-            id="email"
-            name="email"
-            label="E-mail"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            helperText={formik.touched.email && formik.errors.email}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-          />
-        </Box>
-        <Box>
-          <TextField
-            InputLabelProps={{ style: { color: "white" } }}
-            variant="outlined"
-            className={classes.inputForm}
-            id="age"
-            name="age"
-            label="Idade"
-            type="number"
-            onChange={formik.handleChange}
-            value={formik.values.age}
-            helperText={formik.touched.age && formik.errors.age}
-            error={formik.touched.age && Boolean(formik.errors.age)}
-          />
-        </Box>
-        <Box>
-          <TextField
-            InputLabelProps={{ style: { color: "white" } }}
-            variant="outlined"
-            className={classes.inputForm}
-            id="tel"
-            name="tel"
-            label="Número do Whatsapp"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.tel}
-            helperText={formik.touched.tel && formik.errors.tel}
-            error={formik.touched.tel && Boolean(formik.errors.tel)}
-          />
-        </Box>
-        <Box>
-          <TextField
-            InputLabelProps={{ style: { color: "white" } }}
-            variant="outlined"
-            className={classes.inputForm}
-            id="msg"
-            name="msg"
-            label="Mensagem"
-            multiline
-            type="text"
-            rows={5}
-            onChange={formik.handleChange}
-            value={formik.values.msg}
-            helperText={formik.touched.msg && formik.errors.msg}
-            error={formik.touched.msg && Boolean(formik.errors.msg)}
-          />
-        </Box>
-
-        <Box className={classes.footerForm}>
-          <Typography variant="subtitle2" component="h3">
-            <Link
-              href="http://www.github.com/programecompedro"
-              className={classes.linkGithub}
+      <Container maxWidth="md">
+        <form
+          className={classes.containerForm}
+          noValidate
+          autoComplete="off"
+          onSubmit={formik.handleSubmit}
+        >
+          <Box className={classes.headerForm}>
+            <Typography className={classes.text} variant="h2" component="h1">
+              Área de contato
+            </Typography>
+            <Typography
+              className={classes.text}
+              variant="subtitle1"
+              component="h2"
             >
-              Código fonte no Github &nbsp;&nbsp;
-              <ExitToAppIcon />
-            </Link>
-          </Typography>
-          <Button variant="contained" color="primary" type="submit">
-            Enviar
-          </Button>
-        </Box>
-      </form>
+              Formulário de validação utilizando React | Typescript | Yup |
+              Formik | Material UI
+            </Typography>
+          </Box>
+          <Box>
+            <TextField
+              InputLabelProps={{ style: { color: "white" } }}
+              variant="outlined"
+              className={classes.inputForm}
+              id="name"
+              name="name"
+              label="Nome Completo"
+              autoFocus
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              helperText={formik.touched.name && formik.errors.name}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+            />
+          </Box>
+          <Box>
+            <TextField
+              InputLabelProps={{ style: { color: "white" } }}
+              variant="outlined"
+              className={classes.inputForm}
+              id="email"
+              name="email"
+              label="E-mail"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              helperText={formik.touched.email && formik.errors.email}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+            />
+          </Box>
+          <Box>
+            <TextField
+              InputLabelProps={{ style: { color: "white" } }}
+              variant="outlined"
+              className={classes.inputForm}
+              id="age"
+              name="age"
+              label="Idade"
+              type="number"
+              onChange={formik.handleChange}
+              value={formik.values.age}
+              helperText={formik.touched.age && formik.errors.age}
+              error={formik.touched.age && Boolean(formik.errors.age)}
+            />
+          </Box>
+          <Box>
+            <TextField
+              InputLabelProps={{ style: { color: "white" } }}
+              variant="outlined"
+              className={classes.inputForm}
+              id="tel"
+              name="tel"
+              label="Número do Whatsapp"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.tel}
+              helperText={formik.touched.tel && formik.errors.tel}
+              error={formik.touched.tel && Boolean(formik.errors.tel)}
+            />
+          </Box>
+          <Box>
+            <TextField
+              InputLabelProps={{ style: { color: "white" } }}
+              variant="outlined"
+              className={classes.inputForm}
+              id="msg"
+              name="msg"
+              label="Mensagem"
+              multiline
+              type="text"
+              rows={5}
+              onChange={formik.handleChange}
+              value={formik.values.msg}
+              helperText={formik.touched.msg && formik.errors.msg}
+              error={formik.touched.msg && Boolean(formik.errors.msg)}
+            />
+          </Box>
+
+          <Box className={classes.footerForm}>
+            <Typography variant="subtitle2" component="h3">
+              <Link
+                href="http://www.github.com/programecompedro"
+                className={classes.linkGithub}
+              >
+                Código fonte no Github &nbsp;&nbsp;
+                <ExitToAppIcon />
+              </Link>
+            </Typography>
+            <Button variant="contained" color="primary" type="submit">
+              Enviar
+            </Button>
+          </Box>
+          <Box className={classes.copyRight}>
+            <Typography variant="subtitle2" component="h4">
+              <Link
+                href="http://www.github.com/programecompedro"
+                className={classes.linkGithub}
+              >
+                programecompedro &nbsp;&nbsp;
+                <CopyrightIcon />
+              </Link>
+            </Typography>
+          </Box>
+        </form>
+      </Container>
     </MuiThemeProvider>
   );
 }
