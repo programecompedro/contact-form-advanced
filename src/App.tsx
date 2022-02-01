@@ -203,7 +203,7 @@ function App() {
           <Box className={classes.footerForm}>
             <Typography variant="subtitle2" component="h3">
               <Link
-                href="http://www.github.com/programecompedro"
+                href="https://github.com/programecompedro/contact-form-advanced"
                 className={classes.linkGithub}
               >
                 Código fonte no Github &nbsp;&nbsp;
