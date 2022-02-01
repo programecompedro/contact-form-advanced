@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+<p align="center">
+  <img src="./media/contact form advanced.png" alt="contact form validation advanced">
+</p>
 ## Available Scripts
 
 In the project directory, you can run:
