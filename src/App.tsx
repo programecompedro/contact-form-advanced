@@ -205,6 +205,7 @@ function App() {
               <Link
                 href="https://github.com/programecompedro/contact-form-advanced"
                 className={classes.linkGithub}
+                target="_blank"
               >
                 Código fonte no Github &nbsp;&nbsp;
                 <ExitToAppIcon />
@@ -219,6 +220,7 @@ function App() {
               <Link
                 href="http://www.github.com/programecompedro"
                 className={classes.linkGithub}
+                target="_blank"
               >
                 programecompedro &nbsp;&nbsp;
                 <CopyrightIcon />
