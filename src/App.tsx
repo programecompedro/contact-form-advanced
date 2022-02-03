@@ -132,6 +132,7 @@ function App() {
               autoFocus
               type="text"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.name}
               helperText={formik.touched.name && formik.errors.name}
               error={formik.touched.name && Boolean(formik.errors.name)}
@@ -147,6 +148,7 @@ function App() {
               label="E-mail"
               type="email"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.email}
               helperText={formik.touched.email && formik.errors.email}
               error={formik.touched.email && Boolean(formik.errors.email)}
@@ -162,6 +164,7 @@ function App() {
               label="Idade"
               type="number"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.age}
               helperText={formik.touched.age && formik.errors.age}
               error={formik.touched.age && Boolean(formik.errors.age)}
@@ -177,6 +180,7 @@ function App() {
               label="Número do Whatsapp"
               type="text"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.tel}
               helperText={formik.touched.tel && formik.errors.tel}
               error={formik.touched.tel && Boolean(formik.errors.tel)}
@@ -194,6 +198,7 @@ function App() {
               type="text"
               rows={5}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.msg}
               helperText={formik.touched.msg && formik.errors.msg}
               error={formik.touched.msg && Boolean(formik.errors.msg)}
